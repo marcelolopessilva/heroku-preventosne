@@ -18,8 +18,6 @@ connex_app = connexion.FlaskApp(__name__, specification_dir=basedir)
 # Recupera a instância da Flask app
 app = connex_app.app
 
-application = app.wsgi_app
-
 # Configura o SQLAlchemy na instancia da app
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////' + os.path.join(basedir, 'prev_ventos.db')
