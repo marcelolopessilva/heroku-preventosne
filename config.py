@@ -16,8 +16,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 connex_app = connexion.FlaskApp(__name__, specification_dir=basedir)
 
 # Recupera a instância da Flask app
-app = connex_app.app
+#app = connex_app.app
 
+app = connexion.App(__name__)
 application = app.app
 
 # Configura o SQLAlchemy na instancia da app
