@@ -17,6 +17,11 @@ port = environ.get("PORT", 5000)
 # Imprime os dados para aparecer no log do Heroku.
 print("HOST={} PORT={}".format(host, port))
 
+app = config.connex_app
+
+# Lê arquivo swagger.yml para configurar os endpoints da api
+app.add_api("swagger.yml")
+
 @app.route('/')
 def index():
     """
